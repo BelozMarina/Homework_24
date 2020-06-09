@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1">
+
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="homework_24.BaseTest"></class>
+            <class name="homework_24.TestAutomationPracticeSIte"/>
+        </classes>
+    </test>
+
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="homework_24.BaseTest"></class>
+            <class name="homework_24.TestAutomationPracticeSIte"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="homework_24.TestListeners"></listener>
+    </listeners>
+
+</suite>

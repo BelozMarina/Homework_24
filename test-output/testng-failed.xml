@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="homework_24.TestListeners"/>
+  </listeners>
+  <test thread-count="5" name="Firefox Test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="homework_24.TestAutomationPracticeSIte">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="notFoundToElement"/>
+          <include name="typeLogin" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="getSite"/>
+        </methods>
+      </class> <!-- homework_24.TestAutomationPracticeSIte -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
+  <test thread-count="5" name="Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="homework_24.TestAutomationPracticeSIte">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="notFoundToElement"/>
+          <include name="typeLogin" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="getSite"/>
+        </methods>
+      </class> <!-- homework_24.TestAutomationPracticeSIte -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
