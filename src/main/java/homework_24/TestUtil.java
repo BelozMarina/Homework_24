@@ -18,6 +18,6 @@ public class TestUtil extends BaseTest {
 
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\screenshot\\" + fileName));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\screenshot\\_" + fileName));
     }
 }

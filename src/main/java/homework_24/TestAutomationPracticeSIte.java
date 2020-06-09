@@ -23,15 +23,16 @@ public class TestAutomationPracticeSIte extends BaseTest {
                 "Authentication failed.", error);
     }
 
-/*
-    @DataProvider
-    public Object[][] invalidCredentials() {
-        return new Object[][] {
-                {"admin@test.com", "qwerty"},
-                {"user@test.com", "987654"},
-        };
+    @Test(dataProvider = "validCredentials")
+    public void typeLogin1(String email, String password) {
+
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@id='passwd']")).sendKeys(password);
+        driver.findElement(By.xpath("//button[@id='SubmitLogin']")).click();
+        String error = driver.findElement(By.xpath("//*[@id='center_column']/div[@class='alert alert-danger']")).getText();
+        Assert.assertEquals("There is 1 error\n" +
+                "Authentication failed.", error);
     }
- */
 
     @Test
     public void notFoundToElement() {
@@ -55,5 +56,13 @@ public class TestAutomationPracticeSIte extends BaseTest {
 
     private Object generateRandomPassword() {
         return "password" + new Random().nextInt();
+    }
+
+    @DataProvider
+    public Object[][] validCredentials() {
+        return new Object[][] {
+                {"admin@gmail.com", "qwerty"},
+                {"user@test.com", "987654"},
+        };
     }
 }
